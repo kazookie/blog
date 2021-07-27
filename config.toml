@@ -2,3 +2,4 @@ baseURL = "http://blog.hacklab.jp"
 languageCode = "ja"
 title = "hacklab"
 theme = "blog"
+disableHugoGeneratorInject = true
