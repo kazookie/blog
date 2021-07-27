@@ -1,0 +1,48 @@
+<footer class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+            <p class="is-size-3">hacklab</p>
+            <p><a href="/">/</a></p>
+            <p><a href="/about">/About</a></p>
+            <p><a href="/posts">/Posts</a></p>
+            <p><a href="/tags">/Tags</a></p>
+            <p><a href="/privacy">/Privacy</a></p>
+        </div>
+        <div class="column">
+          <p class="is-size-4">Categories</p>
+          {{ range .Site.Taxonomies.categories }}
+          <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+          {{ end }}
+        </div>
+        <div class="column">
+          <p class="is-size-4">Tags</p>
+          {{ range .Site.Taxonomies.tags }}
+          <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+          {{ end }}
+        </div>
+        <div class="column">
+          <p class="is-size-4">SNS</p>
+          <a href="https://twitter.com/kazoookie"><i class="fa fa-twitter is-size-5"></i></a>
+          <a href="https://github.com/kazookie"><i class="fa fa-github is-size-5"></i></a>
+          <a href="https://www.youtube.com/channel/UC8fhpUkwxxqxglJkQQzVYGw"><i class="fa fa-youtube is-size-5"></i></a>
+          <a href="https://steamcommunity.com/id/kazooookie/"><i class="fa fa-steam"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        &copy; 2015-2021 {{ .Site.Title }}.
+        Powered by <a href="https://gohugo.io/">Hugo</a>
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

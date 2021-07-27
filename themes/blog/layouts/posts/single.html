@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-2">
+        {{ .TableOfContents }}
+      </div>
+      <div class="column is-7">
+        <div class="card is-fullwidth">
+          <div class="card-content">
+            <h2 class="title">{{ .Title }}</h2>
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        {{ partial "latest-posts" . }}
+        {{ partial "twitter" }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "footer.html" . }}

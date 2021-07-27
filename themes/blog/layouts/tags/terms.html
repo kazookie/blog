@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8">
+        <h1>Tags</h1>
+        {{ range .Site.Taxonomies.tags }}
+          <a class="button" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+        {{ end }}
+      </div>
+      <div class="column">
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "footer.html" . }}

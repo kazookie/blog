@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header is-info">
+    <p class="card-header-title">Latest Posts</p>
+  </div>
+  <div class="card-content">
+    <ui class="content">
+      {{ range where .Site.RegularPages "Type" "posts" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ui>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+/**
+ * Markdown
+ */
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 28px;
+}
+.section {
+    padding: 40px 0;
+}
+.columns {
+    margin-left: 0;
+    margin-right: 0;
+}
+.card {
+    margin-bottom: 15px;
+}
+.image img {
+    display: block;
+    height: 270px;
+    width: 100%;
+}
+.sns-link {
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .image img {
+        display: block;
+        height: 200px;
+        width: 100%;
+    }
+}

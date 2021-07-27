@@ -1,0 +1,20 @@
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-9">
+        {{ range .Data.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      </div>
+      <div class="column">
+        {{ partial "latest-posts" . }}
+        {{ partial "twitter" }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "footer.html" . }}
