@@ -2,7 +2,7 @@ version: '2'
 services:
   hugo:
     build: .
-    command: hugo server --bind=0.0.0.0
+    command: hugo server --bind=0.0.0.0 --disableLiveReload
     volumes:
       - .:/webapp
     ports:
