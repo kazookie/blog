@@ -3,3 +3,9 @@ languageCode = "ja"
 title = "hacklab"
 theme = "blog"
 disableHugoGeneratorInject = true
+
+[markup.goldmark.renderer]
+  hardWraps = true
+  unsafe = true
+[markup.goldmark.parser.attribute]
+  block = true

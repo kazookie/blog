@@ -2,10 +2,11 @@
  * Markdown
  */
 h1 {
-  font-size: 48px;
+  font-size: 3.5rem;
 }
 h2 {
   font-size: 40px;
+  border-bottom: 2px solid #bbb;
 }
 h3 {
   font-size: 28px;
