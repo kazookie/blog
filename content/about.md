@@ -3,7 +3,7 @@ title = "About"
 date = 2021-07-31T19:30:00+09:00
 +++
 
-![プロフィール](./profile.png)
+![プロフィール](/img/profile.png)
 { .profile_img }
 
 ## Profile
