@@ -5,12 +5,15 @@
   <div class="container">
     <div class="columns">
       <div class="column is-9">
-        {{ range $index,$value := where .Site.RegularPages "Type" "posts" }}
+        <p class="title">作成中</p>
+        {{ $posts := where .Site.RegularPages "Type" "posts" }}
+        {{ $len := (len $posts) }}
+        {{ range $index,$value := $posts }}
           {{ if (modBool $index 2) }}
             <div class="columns">
           {{ end }}
           {{ .Render "summary" }}
-          {{ if not (modBool $index 2) }}
+          {{ if or (not (modBool $index 2)) (eq (add $index 1) $len) }}
             </div>
           {{ end }}
         {{ end }}
