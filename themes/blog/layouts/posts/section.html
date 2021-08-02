@@ -4,10 +4,21 @@
 <section class="section">
   <div class="container">
     <div class="columns">
-      <div class="column is-9">
-        {{ range .Data.Pages }}
-          {{ .Render "summary" }}
-        {{ end }}
+      <div class="column is-8">
+        <div class="card is-fullwidth">
+          <div class="card-header">
+            <div class="card-header-title">Posts</div>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <ul>
+                {{ range .Data.Pages }}
+                  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="column">
         {{ partial "latest-posts" . }}

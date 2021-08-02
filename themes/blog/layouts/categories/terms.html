@@ -5,11 +5,20 @@
   <div class="container">
     <div class="columns">
       <div class="column is-8">
-        {{ range .Site.Taxonomies.categories }}
-          <a class="button" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
-        {{ end }}
+        <div class="card">
+          <div class="card-header">
+            <div class="card-header-title">Categories</div>
+          </div>
+          <div class="card-content">
+            {{ range .Site.Taxonomies.categories }}
+              <a class="button" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+            {{ end }}
+          </div>
+        </div>
       </div>
       <div class="column">
+        {{ partial "latest-posts" . }}
+        {{ partial "twitter" }}
       </div>
     </div>
   </div>

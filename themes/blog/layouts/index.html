@@ -5,8 +5,14 @@
   <div class="container">
     <div class="columns">
       <div class="column is-9">
-        {{ range where .Site.RegularPages "Type" "posts" }}
+        {{ range $index,$value := where .Site.RegularPages "Type" "posts" }}
+          {{ if (modBool $index 2) }}
+            <div class="columns">
+          {{ end }}
           {{ .Render "summary" }}
+          {{ if not (modBool $index 2) }}
+            </div>
+          {{ end }}
         {{ end }}
       </div>
       <div class="column">
