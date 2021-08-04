@@ -14,13 +14,13 @@
         <div class="column">
           <p class="is-size-4">Categories</p>
           {{ range .Site.Taxonomies.categories }}
-          <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+          <a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}({{ .Count }})</a>
           {{ end }}
         </div>
         <div class="column">
           <p class="is-size-4">Tags</p>
           {{ range .Site.Taxonomies.tags }}
-          <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+          <a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}({{ .Count }})</a>
           {{ end }}
         </div>
         <div class="column">

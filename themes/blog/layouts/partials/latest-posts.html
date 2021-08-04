@@ -5,7 +5,7 @@
   <div class="card-content">
     <ui class="content">
       {{ range where .Site.RegularPages "Type" "posts" }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ui>
   </div>

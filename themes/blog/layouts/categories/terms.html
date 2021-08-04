@@ -11,7 +11,7 @@
           </div>
           <div class="card-content">
             {{ range .Site.Taxonomies.categories }}
-              <a class="button" href="{{ .Page.Permalink }}">{{ .Page.Title }}({{ .Count }})</a>
+              <a class="button" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}({{ .Count }})</a>
             {{ end }}
           </div>
         </div>

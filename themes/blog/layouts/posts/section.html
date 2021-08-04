@@ -13,7 +13,7 @@
             <div class="content">
               <ul>
                 {{ range .Data.Pages }}
-                  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                 {{ end }}
               </ul>
             </div>
