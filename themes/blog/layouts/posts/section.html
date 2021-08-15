@@ -1,24 +1,13 @@
 {{ partial "header.html" . }}
 {{ partial "nav.html" . }}
 
-<section class="section">
+<section class="section pr-2 pl-2">
   <div class="container">
     <div class="columns">
       <div class="column is-8">
-        <div class="card is-fullwidth">
-          <div class="card-header">
-            <div class="card-header-title">Posts</div>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <ul>
-                {{ range .Data.Pages }}
-                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ end }}
-              </ul>
-            </div>
-          </div>
-        </div>
+        {{ range .Data.Pages }}
+          {{ .Render "summary"}}
+        {{ end }}
       </div>
       <div class="column">
         {{ partial "latest-posts" . }}

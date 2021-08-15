@@ -1,26 +1,21 @@
 {{ partial "header.html" . }}
 {{ partial "nav.html" . }}
 
-<section class="section">
+<section class="section pr-2 pl-2">
   <div class="container">
     <div class="columns">
       <div class="column is-9">
-        <p class="title">作成中</p>
-        {{ $posts := where .Site.RegularPages "Type" "posts" }}
-        {{ $len := (len $posts) }}
-        {{ range $index,$value := $posts }}
-          {{ if (modBool $index 2) }}
-            <div class="columns">
+        <div class="columns is-multiline is-1">
+          {{ range (where .Site.RegularPages "Type" "posts") }}
+            {{ partial "post_card" . }}
           {{ end }}
-          {{ .Render "summary" }}
-          {{ if or (not (modBool $index 2)) (eq (add $index 1) $len) }}
-            </div>
-          {{ end }}
-        {{ end }}
+        </div>
       </div>
       <div class="column">
+        {{ partial "search" }}
         {{ partial "latest-posts" . }}
         {{ partial "twitter" }}
+      </div>
       </div>
     </div>
   </div>

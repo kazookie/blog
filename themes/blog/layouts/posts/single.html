@@ -1,19 +1,40 @@
 {{ partial "header.html" . }}
 {{ partial "nav.html" . }}
 
-<section class="section">
+<section class="section pr-2 pl-2" id="post">
   <div class="container">
     <div class="columns">
-      <div class="column is-2">
-        {{ .TableOfContents }}
-      </div>
-      <div class="column is-7">
-        <div class="card is-fullwidth">
-          <div class="card-content">
-            <h2 class="title">{{ .Title }}</h2>
+      <div class="column is-8">
+        <div class="card mb-3">
+          <div class="card-content post">
+            <h1 class="title">{{ .Title }}</h1>
+            <p class="is-size-6"><i class="fa fa-calendar"></i>
+              {{ .PublishDate.Format "2006-01-02" }}
+              ({{ .PublishDate.Format "2006-01-02" }} 更新)<br>
+              <i class="fa fa-tags"></i>
+              {{ range (.GetTerms "tags") }}
+                <a href="{{ .Page.RelPermalink }}">#{{ .LinkTitle }}</a>
+              {{ end }}
+            </p>
+            <p style="width: 80%"><img class="thumbnail is-centered" src="{{ .Params.thumbnail }}" alt=""></p>
+            <article class="message is-link is-info">
+              <div class="message-header">目次</div>
+              <div class="message-body">
+                {{ .TableOfContents }}
+              </div>
+            </article>
             {{ .Content }}
           </div>
         </div>
+
+        <nav class="pagination is-rounded is-centered" role="navigation" aria-label="pagination">
+          {{ with .NextInSection }}
+            <a class="pagination-previous" href="{{ .RelPermalink }}">{{ .Title | truncate 50 "..."}}</a>
+          {{ end }}
+          {{ with .PrevInSection }}
+            <a class="pagination-next" href="{{ .RelPermalink }}">{{ .Title | truncate 50 "..." }}</a>
+          {{ end }}
+        </nav>
       </div>
       <div class="column">
         {{ partial "latest-posts" . }}

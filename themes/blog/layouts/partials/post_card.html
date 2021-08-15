@@ -1,0 +1,20 @@
+<div class="column is-one-third">
+  <div class="card post-card">
+    <div class="card-image">
+      <figure class="image is-3by2">
+        <a href="{{ .RelPermalink }}">
+          <img class="thumbnail" src="{{ .Params.thumbnail }}" alt="">
+        </a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        <p class="is-size-7">{{ .PublishDate.Format "2006-01-02" }}</p>
+        <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+        {{ range (.GetTerms "tags") }}
+          <a class="tag" href="{{ .Page.RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

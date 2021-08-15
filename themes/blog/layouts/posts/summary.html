@@ -1,23 +1,21 @@
-<div class="column is-half">
-  <div class="card is-fullwidth">
-    <div class="card-image">
+<div class="card mb-5">
+    <div class="columns is-gapless">
+    <div class="column is-3by2 is-one-quarter card-image">
       <figure class="image">
         <img class="thumbnail" src="{{ .Params.thumbnail }}" alt="">
       </figure>
     </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-4">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="column">
+      <div class="card-content">
+        <div class="content">
+          <p><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+          <p class="is-size-6"><i class="fa fa-calendar"></i>
+            {{ .PublishDate.Format "2006-01-02" }}
+            ({{ .PublishDate.Format "2006-01-02" }} 更新)<br>
           </p>
+          {{ .Summary }}
+          <div><a href="{{ .RelPermalink }}">Read More »</a></div>
         </div>
-      </div>
-      <div class="content">
-        {{ .Summary }}
-      </div>
-      <div>
-        <a class="button" href="{{ .RelPermalink }}">READ MORE</a>
       </div>
     </div>
   </div>

@@ -1,39 +1,48 @@
-/**
- * Markdown
- */
-h1 {
-  font-size: 3.5rem;
-}
-h2 {
-  font-size: 40px;
-  border-bottom: 2px solid #bbb;
-}
-h3 {
-  font-size: 28px;
-}
-.section {
-    padding: 40px 0;
-}
-.columns {
-    margin-left: 0;
-    margin-right: 0;
-}
-.card {
-    margin-bottom: 15px;
-}
-.image img {
-    display: block;
-    height: 270px;
-    width: 100%;
-}
 .sns-link {
     color: #fff;
 }
 
-@media screen and (max-width: 600px) {
-    .image img {
-        display: block;
-        height: 200px;
-        width: 100%;
+/**
+ * Post layout
+ */
+.post h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.post h2 {
+  font-size: 1.6em;
+  font-weight: 600;
+  border-bottom: 1px #ddd solid;
+}
+.post h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.post h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+.post h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.post > p {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}
+/**
+ * Top page post card
+ */
+@media screen and (max-width: 768px) {
+    .post-card {
+        display: flex;
+    }
+    .post-card .card-image {
+        flex: none;
+        width: 30%;
+        border-radius: 0.25rem;
+    }
+    .post-card .card-image img {
+        border-radius: 0.25rem;
     }
 }
