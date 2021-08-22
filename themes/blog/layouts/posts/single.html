@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 {{ partial "nav.html" . }}
 
-<section class="section pr-2 pl-2" id="post">
+<section class="section pr-2 pl-2">
   <div class="container">
     <div class="columns">
       <div class="column is-8">
@@ -10,7 +10,7 @@
             <h1 class="title">{{ .Title }}</h1>
             <p class="is-size-6"><i class="fa fa-calendar"></i>
               {{ .PublishDate.Format "2006-01-02" }}
-              ({{ .PublishDate.Format "2006-01-02" }} 更新)<br>
+              ({{ .Lastmod.Format "2006-01-02" }} 更新)<br>
               <i class="fa fa-tags"></i>
               {{ range (.GetTerms "tags") }}
                 <a href="{{ .Page.RelPermalink }}">#{{ .LinkTitle }}</a>
