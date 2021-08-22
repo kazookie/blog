@@ -1,17 +1,3 @@
----
-title: "vimの設定"
-date: 2021-08-03T03:43:00+09:00
-tags: ["vim"]
-categories: ["tech"]
-thumbnail: "/img/thumbnail_vim.svg"
----
-
-vimの設定
-
-<!--more-->
-
-## 設定
-```
 "Display line numbers
 set number
 
@@ -22,6 +8,7 @@ set smartindent
 "Configur tab
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 "Display tab and half-space
 set list
@@ -41,7 +28,3 @@ function AddExecmod()
         call system("chmod +x ". expand("%"))
     endif
 endfunction
-```
-
-## ファイル
-[vimrc](/vimrc)
