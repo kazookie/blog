@@ -7,3 +7,4 @@ services:
       - .:/webapp
     ports:
       - 1313:1313
+    restart: always
